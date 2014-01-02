@@ -1,0 +1,27 @@
+{
+  "name": "mooui",
+  "title": "MooUI",
+  "description": "The best jQuery plugin ever.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/puras/mooui",
+  "author": {
+    "name": "puras",
+    "email": "puras.he@gmail.com",
+    "url": "http://puras.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/puras/mooui.git"
+  },
+  "bugs": "https://github.com/puras/mooui/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/puras/mooui/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "*"
+  },
+  "keywords": []
+}
