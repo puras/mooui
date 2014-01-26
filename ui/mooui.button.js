@@ -14,5 +14,25 @@
 
 (function($, undefined) {
 
-    $.mooui('mooui.button');
+    $.moo('mooui.mbutton', {
+        default_element: '<button>',
+        options: {
+            disabled: null,
+            text: true,
+            label: null,
+            icons: {
+                primary: null,
+                secondary: null
+            }
+        },
+        _create: function() {
+            console.log('this is mbutton init method');
+            console.log(this.element);
+            console.log(this.options.disabled);
+        },
+
+        reload: function() {
+            console.log('reload me');
+        }
+    });
 } (jQuery));

@@ -23,7 +23,71 @@
         }
     });
 
-    $.mooui = function(name, base, prototype) {
-        console.log('mooui');
+    var widget_uuid = 0;
+
+    $.moo = function(name, prototype) {
+        var namespace = name.split('.')[0];
+        name = name.split('.')[1];
+        var full_name = namespace + '-' + name;
+
+        $[namespace] = $[namespace] || {};
+        var constructor = $[namespace][name] = function(options, element) {
+            if (!this._create_moo) {
+                return new constructor(options, element);
+            }
+
+            if (arguments.length) {
+                this._create_moo(options, element);
+            }
+        };
+
+        var base_prototype = new $.Moo();
+
+        // constructor.prototype = $.extend({}, base_prototype);
+
+        $.fn[name] = function(options) {
+            var is_method_call = typeof options == 'string';
+            var args = Array.prototype.slice.call(arguments, 1);
+
+            if (is_method_call) {
+                var instance = $.data(this[0], full_name);
+                return (instance ? instance[options].apply(instance, args) : undefined);
+            }
+
+            return this.each(function() {
+                var instance = $.data(this, full_name);
+                if (is_method_call && instance && $.isFunction(instance[options])) {
+                    instance[options].apply(instance, args);
+                } else if (!is_method_call) {
+                    $.data(this, full_name, new constructor(options, this));
+                }
+            });
+        };
+
+        constructor.prototype = $.extend({}, $.Moo.prototype, prototype);
+    };
+
+    $.Moo = function() {};
+
+    $.Moo.prototype = {
+        moo_name: 'moo',
+        default_element: '<div>',
+        options: {
+            disabled: false
+        },
+
+        _create_moo: function(options, element) {
+            element = $(element || this.default_element || this)[0];
+
+            this.element = $(element);
+
+            this.options = $.extend({}, this.options, options);
+
+            this._init();
+            this._create();
+        },
+
+        _init: $.noop,
+        _create: $.noop
     };
 } (jQuery));

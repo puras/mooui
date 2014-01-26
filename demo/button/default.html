@@ -7,8 +7,12 @@
     <script type="text/javascript" src="../../ui/mooui.button.js"></script>
     <script type="text/javascript">
         $(function() {
-            $.mooui('mooi.button');
-            $('input[type=submit], a, button').mobutton();
+            // $.mooui('mooi.button');
+            $('input[type=submit], a, button').mbutton({
+                disabled: true
+            });
+
+            $('input[type=submit]').mbutton('reload');
         });
     </script>
 </head>
