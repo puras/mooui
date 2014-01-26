@@ -6,9 +6,9 @@
  * Copyright (c) 2014 puras
  * Licensed under the MIT license.
  *
- * http://mooui.mooko.net/grid
+ * http://mooui.mooko.net/tooltip
  * Depends:
- *      none
+ *      mooui.core.js
  */
 (function($, undefined) {
 "use strict";

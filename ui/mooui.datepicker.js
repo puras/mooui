@@ -6,9 +6,9 @@
  * Copyright (c) 2014 puras
  * Licensed under the MIT license.
  *
- * http://mooui.mooko.net/grid
+ * http://mooui.mooko.net/datepicker
  * Depends:
- *      none
+ *      mooui.core.js
  */
 (function($, undefined) {
 "use strict";

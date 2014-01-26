@@ -10,9 +10,8 @@
  * Depends:
  *      mooui.core.js
  */
-"use strict";
-
 (function($, undefined) {
+"use strict";
 
     $.moo('mooui.mbutton', {
         default_element: '<button>',
@@ -26,13 +25,9 @@
             }
         },
         _create: function() {
-            console.log('this is mbutton init method');
-            console.log(this.element);
-            console.log(this.options.disabled);
         },
 
         reload: function() {
-            console.log('reload me');
         }
     });
 } (jQuery));

@@ -10,9 +10,8 @@
  * Depends:
  *      none
  */
-"use strict";
-
 (function($, undefined) {
+"use strict";
     $.mooui = $.mooui || {};
 
     $.extend($.mooui, {
@@ -23,17 +22,15 @@
         }
     });
 
-    var widget_uuid = 0;
-
     $.moo = function(name, prototype) {
         var namespace = name.split('.')[0];
         name = name.split('.')[1];
         var full_name = namespace + '-' + name;
 
         $[namespace] = $[namespace] || {};
-        var constructor = $[namespace][name] = function(options, element) {
+        var Constructor = $[namespace][name] = function(options, element) {
             if (!this._create_moo) {
-                return new constructor(options, element);
+                return new Constructor(options, element);
             }
 
             if (arguments.length) {
@@ -41,12 +38,12 @@
             }
         };
 
-        var base_prototype = new $.Moo();
+        // var base_prototype = new $.Moo();
 
         // constructor.prototype = $.extend({}, base_prototype);
 
         $.fn[name] = function(options) {
-            var is_method_call = typeof options == 'string';
+            var is_method_call = typeof options === 'string';
             var args = Array.prototype.slice.call(arguments, 1);
 
             if (is_method_call) {
@@ -59,12 +56,12 @@
                 if (is_method_call && instance && $.isFunction(instance[options])) {
                     instance[options].apply(instance, args);
                 } else if (!is_method_call) {
-                    $.data(this, full_name, new constructor(options, this));
+                    $.data(this, full_name, new Constructor(options, this));
                 }
             });
         };
 
-        constructor.prototype = $.extend({}, $.Moo.prototype, prototype);
+        Constructor.prototype = $.extend({}, $.Moo.prototype, prototype);
     };
 
     $.Moo = function() {};

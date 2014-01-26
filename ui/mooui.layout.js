@@ -10,9 +10,8 @@
  * Depends:
  *      mooui.core.js
  */
-"use strict";
-
 (function($, undefined) {
+"use strict";
 
     
 } (jQuery));

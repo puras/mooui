@@ -22,7 +22,23 @@ module.exports = function(grunt) {
       },
       dist: {
         // src: ['src/<%= pkg.name %>.js'],
-        src: ['src/*.js'],
+        // src: ['ui/*.js'],
+        src: [
+          'ui/core.js',
+          'ui/accordion.js',
+          'ui/button.js',
+          'ui/dashboard.js',
+          'ui/datepicker.js',
+          'ui/dialog.js',
+          'ui/grid.js',
+          'ui/layout.js',
+          'ui/menu.js',
+          'ui/panel.js',
+          'ui/resizable.js',
+          'ui/slider.js',
+          'ui/tabs.js',
+          'ui/tooltip.js'
+        ],
         dest: 'dist/<%= pkg.name %>.js'
       },
     },
@@ -47,9 +63,9 @@ module.exports = function(grunt) {
       },
       src: {
         options: {
-          jshintrc: 'src/.jshintrc'
+          jshintrc: 'ui/.jshintrc'
         },
-        src: ['src/**/*.js']
+        src: ['ui/**/*.js']
       },
       test: {
         options: {
@@ -83,6 +99,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'qunit', 'clean', 'concat', 'uglify']);
-
+  // grunt.registerTask('default', ['jshint', 'qunit', 'clean', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'clean', 'concat', 'uglify']);
 };
