@@ -13,5 +13,18 @@
 (function($, undefined) {
 "use strict";
 
-    
+    $.moo('mooui.panel', {
+        default_element: '<div>',
+        options: {
+            title: true,
+            content: true,
+            icon: false,
+            width: 'auto',
+            height: 'auto'
+        },
+        _init: function() {
+            console.log(this.element.attr('id'));
+        },
+        _create: function() {}
+    });
 } (jQuery));

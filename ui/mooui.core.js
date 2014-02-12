@@ -17,7 +17,7 @@
     $.extend($.mooui, {
         version: "0.1.0",
 
-        keyCode: {
+        key_code: {
             BACKSPACE: 8
         }
     });
