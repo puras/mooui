@@ -1,0 +1,26 @@
+{
+  "name": "MooUI",
+  "version": "0.1.0",
+  "description": "MooUI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:puras/mooui.git"
+  },
+  "keywords": [
+    "jquery",
+    "ui"
+  ],
+  "author": "puras <he@puras.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/puras/mooui/issues"
+  },
+  "homepage": "https://github.com/puras/mooui",
+  "devDependencies": {
+    "gulp": "^3.8.10"
+  }
+}
