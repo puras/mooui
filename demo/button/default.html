@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MooUI Button - Default</title>
+    <script type="text/javascript" src="../../libs/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../../ui/mooui.core.js"></script>
+    <script type="text/javascript" src="../../ui/mooui.button.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            // $.mooui('mooi.button');
+            $('input[type=submit], a, button').mbutton({
+                disabled: true
+            });
+
+            $('input[type=submit]').mbutton('_init');
+        });
+    </script>
+</head>
+<body>
+    <button>A button element</button>
+    <input type="submit" value="A submit button" />
+    <a href="#">An anchor</a>
+</body>
+</html>
